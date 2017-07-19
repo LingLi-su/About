@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="final-project">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>IST 400 | Advanced Web Design | Final Project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/final.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/slick.css">
+
+
+
+	</head>
+
+
+
+	<body>
+
+		<header class="main-header">
+		<h1 class="heading">Year of 2016</h1>
+
+		<i class="fa fa-sort-desc"></i>
+		<nav class="navigation">
+			<h1>Main Navigation Menu</h1>
+			<ul>
+				<li><a href="#slides">Home</a></li>
+				<li><a href="#abroad">Study Abroad</a></li>
+				<li><a href="#countries">Asia Trips</a></li>
+				<li><a href="#follow">Follow Me</a></li>
+			</ul>
+		</nav>
+				<div class="loading-screen"></div>
+		</header>
+
+
+
+
+
+		<section id="slides" class="main-section"data-scroll-class="scrolled-to">
+			<article>
+				<img src="img/one.jpg" alt="Image One" />
+				<h1>Taipei 101</h1>
+			</article>
+
+			<article>
+				<img src="img/two.jpg" alt="Image Two" />
+				<h1>Umeda Sky Building</h1>
+			</article>
+
+			<article>
+				<img src="img/three.jpg" alt="Image Three" />
+				<h1>Songshan District</h1>
+			</article>
+
+			<article>
+				<img src="img/four.jpg" alt="Image Four" />
+				<h1>Kurama Onsen</h1>
+			</article>
+
+		</section>
+		<section id="abroad" class="main-section"data-scroll-class="scrolled-to">
+			<header class="heading2">
+			<h1>Study Abroad</h1>
+		</header>
+			<div>
+			 <h2>Kansai Gaidai University</h2>
+			 <div class="extra-credit">
+			 </div>
+			</div>
+			<div>
+
+				<p>
+					Study Abroad in Japan is one of the best time of my life. I ate many delicious food, made many friends, went to many places, and learned many new things. I love it! Everything is awesome. I wish I could of stay there longer.
+
+
+					</p>
+			<blockquote>
+				<i class="fa fa-quote-left"></i>Hey Japan, I will be back<i class="fa fa-quote-right"></i>
+			</blockquote>
+			</div>
+
+
+		</section>
+
+
+		<section id="countries" class="main-section"data-scroll-class="scrolled-to">
+				<header class="heading3">
+					<h1>Asia Trips</h1>
+				</header>
+			<ul>
+				<li>
+
+					<img src="img/japan.jpg" alt="One" />
+					<a href="img/japan.jpg">
+						japan
+					</a>
+				</li>
+				<li>
+					<img src="img/thai.jpg" alt="Two" />
+					<a href="img/thai.jpg">Thailand
+
+					</a>
+				</li>
+				<li>
+					<img src="img/korea.jpg" alt="Three" />
+					<a href="img/korea.jpg">Korea
+
+					</a>
+				</li>
+				<li>
+				<img src="img/taipei.jpg" alt="Four" />
+					<a href="img/taipei.jpg">Taipei
+
+					</a>
+				</li>
+
+			</ul>
+		</section>
+		<section id="follow" class="main-section"data-scroll-class="scrolled-to">
+			<header class="heading4">
+					<h1>Connect on Social Media</h1>
+				</header>
+					<ul>
+						<li>
+
+							<a class="facebook" href="https://www.facebook.com/lingligantz">
+								<i class="fa fa-facebook-square" aria-hidden="true"></i>
+							</a>
+							<h2>Like on Facebook</h2>
+						</li>
+						<li>
+
+							<a class="twitter" href="#">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<h2>Follow on Twitter</h2>
+						</li>
+						<li>
+
+							<a class="instagram" href="#">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<h2>Follow on Instagram</h2>
+						</li>
+						<li>
+
+							<a class="google" href="#">
+								<i class="fa fa-google" aria-hidden="true"></i>
+							</a>
+							<h2>Google Me</h2>
+						</li>
+					</ul>
+		</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<script src="js/slick.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.min.js"></script>
+		<script src="js/scrollClass.min.js"></script>
+
+		<script>
+	$.fn.scrollMenu = function(options) {
+			var defaults = {
+				duration: 1000
+			};
+			var settings = $.extend({}, defaults, options);
+
+			return this.each(function() {
+
+				$(this).click(function(){
+					event.preventDefault();
+
+					var href = $(this).attr('href');
+					var offset = $(href).offset().top;
+					$('body').animate({scrollTop:offset}, defaults.duration);
+				});
+			});
+		};
+
+		$('.navigation a').scrollMenu({duration:200});
+
+			$(function() {
+					$('.main-header i').click(function() {
+					$('.navigation').toggleClass('open');
+
+				});
+
+
+            $('#slides').slick({
+                arrows: true,
+                dots:false,
+                autoplay:true,
+                autoplaySpeed:3000
+            });
+
+
+            	$('.main-header').headroom({
+				classes: {
+				unpinned: "unpinned"
+				}
+			});
+
+
+
+            });
+      	</script>
+
+	</body>
+</html>
+

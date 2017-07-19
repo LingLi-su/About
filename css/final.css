@@ -1,0 +1,512 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+html, body { 
+margin:0; 
+padding:0; 
+height: 100vh;
+width: 100%;}
+	
+body { 
+font:1.1em/1.5 Helvetica, "Palatino Linotype", "Book Antiqua", Georgia, sans-serif;
+}
+
+.heading { 
+    animation:move-heading 1s 3s; 
+    animation-fill-mode:forwards;
+    overflow:hidden; 
+    margin:0; 
+    padding:0px 10px; 
+    position:fixed; 
+    z-index:3; 
+    left:50%; 
+    top:50%; 
+    transform:translate(-50%, -50%); 
+    color:#00bf8f; 
+    font:100px/100px Merriweather; 
+}
+
+
+.heading:before { 
+    animation:slide-text 3s; 
+    animation-fill-mode:forwards; 
+    content:"";
+    position:absolute; 
+    width:100%; 
+    height:100%; 
+    left:0; 
+    top:0; 
+    background-color:rgba(255,255,255,.75); 
+}
+
+@keyframes slide-text {
+    to { transform:translateX(100%);}
+
+}
+
+@keyframes move-heading {
+        to { 
+
+            left:50%; top:0; 
+            transform:translate(-50%,0); 
+            font-size: 40px; 
+            line-height: 60px; 
+            color:#000;}
+
+}
+	
+.loading-screen { 
+        animation:loading-screen 1s 3s; 
+        animation-fill-mode:forwards; 
+        position:fixed; z-index:2; 
+        left:0; 
+        top:0; 
+        width:100%; 
+        height:100%; 
+        background-color:#fff; 
+        transform-origin:bottom center; 
+}
+
+@keyframes loading-screen {
+        to {transform:scaleY(0); opacity: 0; }
+}
+
+
+.main-section { 
+    min-height:100vh;
+}
+
+
+.navigation > h1 { 
+    position:absolute; 
+    left:-99999px; 
+} 	
+
+.main-header{
+    list-style:none; 
+    height: 4em; 
+    position:fixed; 
+    display: flex; 
+    justify-content:flex-end; 
+    align-items:center;
+    margin:0; 
+    padding:0; 
+    background-color: #fff;
+    box-shadow:2px 2px 5px #888; 
+    z-index: 3;
+    width: 100%;
+}
+
+.main-header i {
+    position: fixed;
+    cursor: pointer;
+    font-size: :1.4em;
+}
+.navigation {
+    position: absolute; 
+    left:-99999px; 
+
+}
+
+.navigation.open {
+ 
+    animation: fade-in .5s; 
+    animation-fill-mode:forwards; 
+    opacity:0; 
+    margin: 0 10px;
+    font:bold 1em/1 Raleway;  
+    color:#000; 
+    text-transform:uppercase; 
+
+    position:fixed; 
+    z-index:1; 
+    top:0; 
+    right:0; 
+    width:auto;
+    height:60px; 
+ 
+}
+@keyframes fade-in {
+        to {opacity: 1;}
+}
+.navigation > ul { 
+    list-style:none; 
+    margin:0; 
+    padding:0; 
+    height:60px; 
+    display:flex; 
+    align-items:center; 
+    justify-content:flex-end; 
+} 
+.navigation > ul > li{
+    padding: 0px 10px;
+}
+.navigation > ul > li > a {
+    text-decoration:none;
+    color: inherit;
+}
+.navigation > ul > li:hover {
+        color:rgba(24, 26, 27,.5);
+        cursor: pointer;
+    }
+
+
+.main-header h1 { 
+    
+    margin:0; 
+    color:#000; 
+    font:100px/100px Merriweather; 
+
+}
+
+
+
+#slides article { 
+    height:100vh; 
+    position:relative; 
+}
+#slides article h1 { 
+    position:absolute; 
+    bottom:0; 
+    left:50%; 
+    transform:translateX(-50%); 
+    font:100px/100px Merriweather; 
+    width:80%; 
+    margin:5% 0; 
+    color:#fff; 
+    text-align:center; 
+    text-shadow:2px 2px 5px rgba(0,0,0,.75); 
+}
+    #slides article img { 
+        position:absolute; 
+        left:0; 
+        top:0; 
+        width:100%; 
+        height:100%; 
+        object-fit:cover; 
+}
+    #slides .slick-prev {  
+        margin:0; 
+        padding:0; 
+        position:absolute; 
+        left:0; 
+        top:50%;
+        z-index: 1;
+        font-size: 0;
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        color: #fff;
+    }
+    #slides .slick-prev:before{
+        content:"\f053"; font-family: FontAwesome;
+        font-size: 50px;
+
+
+    }
+    #slides .slick-prev:hover{
+        cursor: pointer;
+        color: #000;
+    }
+    #slides .slick-next:hover{
+        cursor: pointer;
+        color: #000;
+    }
+    #slides .slick-next:focus,#slides .slick-prev:focus{
+        outline:none;
+    }
+    #slides .slick-next {  
+        margin:0; 
+        padding:0; 
+        position:absolute; 
+        right:0; 
+        top:50%;
+        z-index: 1;
+        font-size: 0;
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        color: #fff;
+    }
+    #slides .slick-next:after{
+        content:"\f054"; font-family: FontAwesome;
+        font-size: 50px;
+    }
+    .main-header.unpinned { 
+        transform:translateY(-100%);
+    }
+
+  .heading2 > h1{
+    position:absolute; 
+    left:-99999px; 
+
+ }
+
+    #abroad{ 
+        display:flex; 
+        align-items:center; 
+        justify-content:center; 
+        min-height:100vh; 
+        
+    }
+    #abroad .extra-credit { 
+        position:relative; 
+        width:25em; 
+        height:19em; 
+        background:none;  
+        box-shadow: 10px 10px 10px #888888;
+    }
+    #abroad .extra-credit:before, 
+    #abroad .extra-credit:after { 
+        transition:.5s; 
+        background-size:cover; 
+        content:''; 
+        position:absolute; 
+        width:100%; 
+        height:100%; 
+        top:0; 
+        left:0; 
+    }
+    
+    #abroad .extra-credit:before { 
+        background-image:url(../img/gaidai.jpg); 
+        z-index:-1; 
+        transform-origin:left center;
+    }
+    #abroad .extra-credit:after { 
+        background-image:url(../img/room.jpg); 
+        z-index:-2; 
+        transform:scaleX(0); 
+        transform-origin:right center;
+    }  
+    #abroad .extra-credit:hover:before { 
+        transform:scaleX(0); 
+    }
+    #abroad .extra-credit:hover:after { 
+        transform:scaleX(1); 
+    }
+
+
+
+ #abroad > div > h2 {
+    margin: 1em; 
+    font: 1.6em Merriweather;
+}
+ #abroad > div { 
+    width:100%; 
+    margin:0 1em; 
+    padding:50px 0; 
+    position:relative; 
+}
+   #abroad > div:last-child p { 
+    text-indent:20px; 
+}
+   #abroad > div:last-child p:first-of-type:first-letter { 
+    display:block; 
+    float:left; 
+    padding:10px 20px; 
+    margin:0 10px 10px 0; 
+    background-color:#1b1b1b; 
+    color:#fff; 
+    font:100px/100px Raleway; 
+    text-align:center; 
+}
+   #abroad > div:nth-child(2){
+    margin-left: 10em;
+}
+   #abroad > div:nth-child(3) > blockquote{
+    font: 2em Raleway;
+    text-shadow: 2px 2px 8px #FF0000;
+}
+
+.heading3 > h1{
+    color: #fff;
+    display: flex;
+    justify-content:center;
+    font:3em Merriweather;
+    padding-top: 3%;
+}
+
+#countries { 
+    background-color:#000; 
+    width: 100%;
+    min-height:100vh;
+}
+    #countries.scrolled-to ul { 
+        opacity:1; 
+        transform:translateY(0);
+         }
+    #countries ul { 
+        width: 100%;
+        list-style:none; 
+        margin:0; 
+        padding:0; 
+        
+        display:flex; 
+        flex-wrap:wrap; 
+        padding-bottom: 1%;
+         
+        
+    }
+    #countries ul li { 
+        width:48%; 
+        margin:1%; 
+        position: relative;
+
+
+    }
+    
+    #countries > ul > li > img {
+     position: relative; 
+     width:100%; 
+     left:0; 
+     top:0;  
+     object-fit:cover; 
+     height: 100vh;
+    }
+    
+    #countries > ul > li > a {
+    background-color: rgba(255, 90, 0, .5);
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    opacity: 0;
+    color: #fff;
+    border: 2px solid #fff;
+    height: 15%;
+    width: 30%;
+    text-transform: capitalize;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: none;
+    }
+     #countries > ul > li:hover{
+        cursor: pointer;
+     }
+  #countries > ul > li:hover a {
+    opacity: 2;
+   
+    }
+
+
+#follow { 
+    width: 100%;
+    min-height:100vh;
+}
+#follow > header > h1{
+    display: flex;
+    justify-content:center;
+    font: 2em Merriweather;
+    padding-top: 3%;
+}
+
+#follow > ul { 
+    list-style:none; 
+    margin:0; 
+    padding:0; 
+    display: flex; 
+    justify-content:space-around; 
+}
+    #follow > ul li { 
+        list-style:none; 
+        margin:0; 
+        padding:0; 
+        position: relative; 
+        width: 10%;
+}
+    #follow > ul li a { 
+        color:#fff; 
+        text-decoration:none;
+        display: block; 
+        width:2em; 
+        height:2em; 
+        border-radius:50%; 
+        margin:2em 0; 
+        display: flex;
+        justify-content:center; 
+        align-items:center; 
+        font-size: 3em;
+}
+   #follow > ul li a.facebook { 
+    background-color:#2D609B; 
+}
+    #follow > ul li a.twitter { 
+    background-color:#00C3F3; 
+}
+    #follow > ul li a.instagram { 
+    background-color:#8a3ab9;  
+}
+    #follow > ul li a.google {
+    background-color: red;
+}
+    #follow > ul li > h2{
+    position: absolute; 
+    text-align: center; 
+    top: 70%; 
+    font: 1.4em Raleway;
+}
+
+
+@media only screen and (max-width: 1230px){
+    .navigation > ul{
+        display: block;
+    }
+    .navigation.open {
+        right: 0; 
+        left: auto; 
+        background-color:#ccc; 
+        top: 4.1em; 
+        margin: 0; 
+    }
+    .navigation > ul li {
+        background: #ccc; 
+        display: flex; 
+        flex-direction:column;
+        padding-top: 20px; 
+        padding-bottom: 20px;
+    }
+    h1.heading{
+        text-align: center;
+    }
+
+@media only screen and (max-width: 1000px){
+    #abroad{
+        display: flex; 
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    #abroad > div:nth-child(2){
+    margin: 0;
+    display: flex;
+    align-items:center;
+    flex-direction:column;
+    }
+    
+    #abroad > div > h2{
+    display: flex;
+    justify-content:center;
+    }
+    
+    #countries ul li{ 
+    width:100%;
+    }
+@media only screen and (max-width: 699px){
+
+     #follow > ul li{
+        width: 50%; 
+        display: flex; 
+        justify-content:center;
+    }
+     #follow > ul{
+        flex-wrap:wrap;
+    }
+     
+
+
